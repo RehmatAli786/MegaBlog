@@ -1,7 +1,7 @@
 import React, { useCallback, useEffect } from 'react'
 import { useForm } from 'react-hook-form'
 import { useSelector } from 'react-redux'
-import { Buttom, Input, Select, RTE } from '../index'
+import { Button, Input, Select, RTE } from '../index'
 import { data, useNavigate } from 'react-router-dom'
 import appwriteService from '../../services/appwrite/config'
 
@@ -112,12 +112,28 @@ function PostForm({ post }) {
                     {post && (
                         <div className="w-100 mb-4">
                             <img
-                            src={appwriteService.getFilePreview(post.featuredImage)}
-                            alt={post.title}
-                            className='rounded'
+                                src={appwriteService.getFilePreview(post.featuredImage)}
+                                alt={post.title}
+                                className='rounded'
                             />
                         </div>
                     )}
+                    <Select
+                        label="Stauts :"
+                        options={[active, inactive]}
+                        className="mb-4"
+                        {...register("status", { required: true })}
+                    />
+
+                    // Check this
+                    <Button
+                        type='submit'
+                        bgColor={post ? 'secondary' : 'primary'}
+                        textColor='white'
+                        className='w-full'
+                    >
+                        {psot ? 'Update' : 'Submit'}
+                    </Button>
                 </div>
             </div>
         </form>
