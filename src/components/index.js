@@ -10,6 +10,7 @@ import PostCard from "./PostCard";
 import Button from "./Button";
 import Signup from "./Signup";
 import RTE from "./RTE";
+import PostForm from "./PostForm/PostForm"
 
 export {
     Header,
@@ -23,5 +24,6 @@ export {
     PostCard,
     Button,
     Signup,
-    RTE
+    RTE,
+    PostForm
 }

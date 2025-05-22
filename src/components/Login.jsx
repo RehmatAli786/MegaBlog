@@ -14,12 +14,11 @@ function Login() {
 
     const Login = async (data) => {
         setError("");
-        console.log(data);
         try {
             const session = await authService.login(data);
             if (session) {
                 const userData = await authService.getCurrentUser();
-                if (userData) useDispatch(authLogin(userData));
+                if (userData) dispatch(authLogin(userData));
                 navigate('/');
             }
         } catch (error) {
