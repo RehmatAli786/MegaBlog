@@ -24,23 +24,22 @@ function Home() {
                 </div>
             </Container>
         </div>
-    } else {
-        <div className="w-full py-8">
-            <Container>
-                <div className="d-flex flex-wrap">
-                    <div className="row">
-                        {posts.map((post) => (
-                            <div key={post.$id} className="p-2 col-3">
-                                <PostCard
-                                    {...post}
-                                />
-                            </div>
-                        ))}
-                    </div>
-                </div>
-            </Container>
-        </div>
     }
+    <div className="w-full py-8">
+        <Container>
+            <div className="d-flex flex-wrap">
+                <div className="row">
+                    {posts.map((post) => (
+                        <div key={post.$id} className="p-2 col-3">
+                            <PostCard
+                                {...post}
+                            />
+                        </div>
+                    ))}
+                </div>
+            </div>
+        </Container>
+    </div>
 }
 
 export default Home
