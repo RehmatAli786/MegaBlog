@@ -11,6 +11,7 @@ import Button from "./Button";
 import Signup from "./Signup";
 import RTE from "./RTE";
 import PostForm from "./PostForm/PostForm"
+import AuthLayout from "./AuthLayout"
 
 export {
     Header,
@@ -25,5 +26,6 @@ export {
     Button,
     Signup,
     RTE,
-    PostForm
+    PostForm,
+    AuthLayout
 }
