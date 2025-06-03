@@ -4,7 +4,6 @@ import { useSelector } from "react-redux";
 
 function Header() {
   const authStatus = useSelector((state) => state.authReducre.status);
-  console.log(authStatus);
   
   const navigate = useNavigate();
   const navItems = [
@@ -48,7 +47,7 @@ function Header() {
               (
                 <li key={item.name}>
                   <button
-                    onClick={navigate(item.slug)}
+                    onClick={() => navigate(item.slug)}
                     className="d-inline-block btn btn-outline-primary px-4 py-2"
                   >{item.name}</button>
                 </li>
