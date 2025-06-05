@@ -8,11 +8,11 @@ function Home() {
 
     useEffect(() => {
         service.getPosts().then((posts) => {
-            setPosts(posts)
+            setPosts(posts.documents)
         })
     }, []);
 
-    if (posts.length === 0) {
+    if (posts?.length === 0) {
         <div className="w-100 py-8 mt-4 text-center">
             <Container>
                 <div className="d-flex flex-wrap">
@@ -29,7 +29,7 @@ function Home() {
         <Container>
             <div className="d-flex flex-wrap">
                 <div className="row">
-                    {posts.map((post) => (
+                    {posts?.map((post) => (
                         <div key={post.$id} className="p-2 col-3">
                             <PostCard
                                 {...post}

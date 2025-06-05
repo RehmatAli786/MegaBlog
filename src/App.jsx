@@ -5,8 +5,8 @@ import { useDispatch } from 'react-redux';
 import { useEffect } from 'react';
 import authService from './services/appwrite/auth';
 import { login, logout } from './features/auth/authSlice';
-import { Button } from 'react-bootstrap';
 import { Footer, Header } from './components';
+import { Outlet } from 'react-router-dom';
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -19,9 +19,11 @@ function App() {
           dispatch(login({ userData }));
         } else {
           dispatch(logout());
+          
         }
       })
       .finally(setLoading(false));
+      
   }, []);
 
   return !loading ? (
@@ -29,7 +31,7 @@ function App() {
       <div className="w-100 d-block">
         <Header />
         <main>
-          {/* <Outlet /> */}
+          <Outlet />
         </main>
         <Footer />
       </div>
